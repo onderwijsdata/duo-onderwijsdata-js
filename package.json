@@ -1,0 +1,52 @@
+{
+  "name": "duo-onderwijsdata-js",
+  "repository": "https://github.com/onderwijsdata/duo-onderwijsdata-js",
+  "private": false,
+  "version": "0.1.0",
+  "description": "A client for the JSON-LD API of the dutch Dienst Uitvoering Onderwijs",
+  "main": "lib/index.js",
+  "directories": {
+    "test": "test",
+    "lib": "lib"
+  },
+  "scripts": {
+    "compile": "npm run compile-src",
+    "compile-src": "babel -d lib/ src/",
+    "bundle": "npm run bundle-prod && npm run bundle-dev",
+    "bundle-prod": "NODE_ENV=production webpack --config webpack.config.production.js",
+    "bundle-dev": "webpack --config webpack.config.js",
+    "lint": "eslint ./",
+    "prepublish": "npm run compile && npm run bundle"
+  },
+  "keywords": [],
+  "author": "Ties de Kock",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.14.0",
+    "jsonld": "^0.4.11",
+    "yup": "^0.21.2"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.14.0",
+    "babel-eslint": "^6.1.2",
+    "babel-loader": "^6.2.5",
+    "babel-plugin-transform-async-to-generator": "^6.8.0",
+    "babel-preset-es2015": "^6.9.0",
+    "babel-preset-es2015-native-generators": "^6.6.0",
+    "babel-preset-stage-0": "^6.5.0",
+    "babili-webpack-plugin": "0.0.2",
+    "dotenv": "^2.0.0",
+    "eslint": "^3.5.0",
+    "eslint-config-airbnb": "^11.1.0",
+    "eslint-import-resolver-webpack": "^0.6.0",
+    "eslint-plugin-babel": "^3.1.0",
+    "eslint-plugin-import": "^1.15.0",
+    "eslint-plugin-jsx-a11y": "^2.2.2",
+    "eslint-plugin-react": "^6.2.2",
+    "jasmine": "^2.5.2",
+    "json-loader": "^0.5.4",
+    "mocha": "^2.4.5",
+    "nodemon": "^1.10.2",
+    "webpack": "^2.1.0-beta.25"
+  }
+}
